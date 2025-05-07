@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 const testRoute = require('./routes/testRoute');
+const assetRoutes = require('./routes/assetRoutes');
 
 const app = express();
 app.use(cors());
@@ -22,6 +23,8 @@ mongoose.connect(process.env.MONGO_URI, {
 app.get('/api/test', (req, res) => {
   res.json({ message: 'API working fine!' });
 });
+
+app.use('/api/assets', assetRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
