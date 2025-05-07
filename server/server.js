@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/testdata', testRoute);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3300;
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
